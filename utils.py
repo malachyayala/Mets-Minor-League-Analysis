@@ -63,7 +63,7 @@ slashLine = ['BA', 'OBP', 'SLG', 'OPS']
 actualVsEx = ['BA', 'xBA', 'OBP', 'xOBP', 'SLG', 'xSLG', 'wOBA', 'xwOBA']
 contactQuality = ['BIP', 'Barrels', 'Hard Hit%', 'EV (MPH)', 'LA (°)', 'Dist (ft)']
 plateDiscipline = ['SO', 'K%', 'BB', 'BB%', 'Swings', 'Whiffs', 'Whiff%', 'Barrel/BBE%', 'Barrel/PA%', 'OBP', 'xOBP']
-powerQuality = ['HR', 'SLG', 'xSLG', 'ISO', 'EV (MPH)', 'Adj. EV (MPH)', 'LA (°)', 'Dist (ft)', 'Hard Hit%']
+powerQuality = ['HR', 'SLG', 'xSLG', 'ISO', 'EV (MPH)', 'Adj. EV (MPH)', 'LA(°)', 'Dist(ft)', 'Hard Hit%']
 
 def teamIdSearch(teamName):
     teamName = input("Enter team name: ")
@@ -131,3 +131,5 @@ completeMetsAAAStats['RC'] = ((completeMetsAAAStats['Hits'] + completeMetsAAASta
 
 # codify column: df['Team'].astype('category').cat.codes
 #completeMetsAAAStats.plot(kind='bar', x='Player', y='HR', title='Home Runs by Player', legend=False)
+
+joinSavantBbref(metsAAAbballSavant, metsAAAbballRef)
