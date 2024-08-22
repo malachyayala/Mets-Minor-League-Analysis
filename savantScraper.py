@@ -6,6 +6,15 @@ import os
 import argparse
 
 def savantScraper(url, csv = False):
+    '''
+    Scrapes table from Baseball Savant minor league statcast search
+    Parameters:
+    ------------
+    urL : Str
+    string of the url to download the table from
+    csv : Boolean
+    boolean indicating weather or not to save the data as a csv
+    '''
     clear = input("Clear?: ")
     if clear != "No":
         os.system('clear')
