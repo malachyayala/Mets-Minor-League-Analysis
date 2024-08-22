@@ -14,6 +14,8 @@ def bballRefScraper(url, tableName, csv = False):
     string of the url to download the table from
     tableName : Str
     string representing the name of the table to scrape.
+    csv : Boolean
+    boolean indicating weather or not to save the data as a csv
     '''
     clear = input("Clear?: ")
     if clear != "No":

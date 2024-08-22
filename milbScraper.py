@@ -6,6 +6,17 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 def scrapeMilbTracker(url, pageCount, csv = False):
+    '''
+    Scrapes table from Milbtracker.com
+    Parameters:
+    ------------
+    urL : Str
+    string of the url to download the table from
+    pageCount : int
+    integer representing the number of pages a table has
+    csv : Boolean
+    boolean indicating weather or not to save the data as a csv
+    '''
     clear = input("Clear?: ")
     if clear != "No":
         os.system('clear')
