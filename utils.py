@@ -53,6 +53,7 @@ metsAAAbballRef = pd.read_csv('csvs/BBrefmetsAAAHitters.csv', encoding='latin1')
 metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/BSmetsPitchByPitchHitters.csv', encoding='latin1')
 completeMilbTrackerPitchers = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/milbTrackerCompletePitcherStats.csv', header=1)
 metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/BSmetsPitchByPitchHitters.csv', encoding='latin1')
+completeMetsAAAStats = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/CcompleteAAAMetsStats.csv', encoding='latin1')
 
 # Stat Filters
 defaultInfo = ['Player', 'Age', 'G', 'PA', 'AB']
@@ -93,6 +94,7 @@ def joinSavantBbref(savant, bballRef):
     columns_to_drop.extend(['Rk', 'Rk.', 'Notes', 'Pitch %', 'Pitches', 'Total', 'Name', 'H'])
     completeStats = completeStats.drop(columns=columns_to_drop)
 
+    completeStats.to_csv('csvs/CcompleteAAAMetsStats.csv', index = False, encoding='latin1')
     return completeStats
 
 def calculateSavantStats(savantDf):
@@ -125,4 +127,7 @@ def analyzePbP(pbpDf, year, month, day):
     print(final['zone'].value_counts())
     print(final['events'].unique())
 
+completeMetsAAAStats['RC'] = ((completeMetsAAAStats['Hits'] + completeMetsAAAStats['BB']) * completeMetsAAAStats['TB'])/(completeMetsAAAStats['AB'] + completeMetsAAAStats['BB'])
+
 # codify column: df['Team'].astype('category').cat.codes
+#completeMetsAAAStats.plot(kind='bar', x='Player', y='HR', title='Home Runs by Player', legend=False)
