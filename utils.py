@@ -55,7 +55,7 @@ completeMilbTrackerPitchers = pd.read_csv('/Users/mj/Documents/Python/pyminorlea
 metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/BSmetsPitchByPitchHitters.csv', encoding='latin1')
 completeMetsAAAStats = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/CcompleteAAAMetsStats.csv', encoding='latin1')
 
-# Stat Filters
+# Baseball Savant and Baseball Reference total stat Filters
 defaultInfo = ['Player', 'Age', 'G', 'PA', 'AB']
 basicStats = ['R', 'Hits', '1B', '2B', '3B', 'HR', 'RBI', 'SO', 'BB', 'BA', 'OBP', 'SLG', 'OPS', 'TB', 'GDP', 'HBP']
 advancedStats = ['K%', 'BB%', 'Whiffs', 'Swings', 'xBA', 'xOBP', 'xSLG', 'wOBA', 'xwOBA', 'Barrels', 'BABIP', 'ISO', 'Whiff%', 'EV (MPH)', 'Adj. EV (MPH)' , 'LA (°)' , 'Dist (ft)', 'Hard Hit%', 'Barrel/BBE%', 'Barrel/PA%']
@@ -65,6 +65,17 @@ contactQuality = ['BIP', 'BABIP', 'Barrels', 'Hard Hit%', 'EV (MPH)', 'Adj. EV (
 plateDiscipline = ['SO', 'K%', 'BB', 'BB%', 'Swings', 'Whiffs', 'Whiff%', 'Barrel/BBE%', 'Barrel/PA%', 'OBP', 'xOBP']
 powerQuality = ['HR', 'SLG', 'xSLG', 'ISO', 'EV (MPH)', 'Adj. EV (MPH)', 'LA (ï¿½)', 'Dist (ft)', 'Hard Hit%']
 
+# Baseball Savant pitch by pitch filters
+hardContact = ['player_name', 'game_date', 'pitch_type', 'launch_angle', 'launch_speed', 'hit_location', 'hit_distance_sc', 'events', 'des']
+pbpOuts = [
+    'field_out',
+    'double_play',
+    'force_out',
+    'grounded_into_double_play',
+    'fielders_choice',
+    'fielders_choice_out',
+    'triple_play'
+] # 'strikeout', 'strikeout_double_play'
 def teamIdSearch(teamName):
     teamName = input("Enter team name: ")
     teamId = 0
