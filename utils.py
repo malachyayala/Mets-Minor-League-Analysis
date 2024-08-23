@@ -61,7 +61,7 @@ basicStats = ['R', 'Hits', '1B', '2B', '3B', 'HR', 'RBI', 'SO', 'BB', 'BA', 'OBP
 advancedStats = ['K%', 'BB%', 'Whiffs', 'Swings', 'xBA', 'xOBP', 'xSLG', 'wOBA', 'xwOBA', 'Barrels', 'BABIP', 'ISO', 'Whiff%', 'EV (MPH)', 'Adj. EV (MPH)' , 'LA (°)' , 'Dist (ft)', 'Hard Hit%', 'Barrel/BBE%', 'Barrel/PA%']
 slashLine = ['BA', 'OBP', 'SLG', 'OPS']
 actualVsEx = ['BA', 'xBA', 'OBP', 'xOBP', 'SLG', 'xSLG', 'wOBA', 'xwOBA']
-contactQuality = ['BIP', 'Barrels', 'Hard Hit%', 'EV (MPH)', 'LA (ï¿½)', 'Dist (ft)', 'Barrel/BBE%', 'Barrel/PA%']
+contactQuality = ['BIP', 'BABIP', 'Barrels', 'Hard Hit%', 'EV (MPH)', 'Adj. EV (MPH)', 'LA (ï¿½)', 'Dist (ft)', 'Barrel/BBE%', 'Barrel/PA%']
 plateDiscipline = ['SO', 'K%', 'BB', 'BB%', 'Swings', 'Whiffs', 'Whiff%', 'Barrel/BBE%', 'Barrel/PA%', 'OBP', 'xOBP']
 powerQuality = ['HR', 'SLG', 'xSLG', 'ISO', 'EV (MPH)', 'Adj. EV (MPH)', 'LA (ï¿½)', 'Dist (ft)', 'Hard Hit%']
 
@@ -107,6 +107,17 @@ def convertColumnsToNumeric(df, cols):
     for col in cols:
         df[col] = pd.to_numeric(df[col], errors='coerce')
     return df
+
+def describeColumns(df, columns_to_convert):
+    df[columns_to_convert] = df[columns_to_convert].apply(pd.to_numeric, errors='coerce')
+
+    # Generate descriptive statistics for each specified column
+    summary_df = pd.concat([df[col].describe() for col in columns_to_convert], axis=1)
+
+    # Set the column names of the summary DataFrame to match the original column names
+    summary_df.columns = columns_to_convert
+
+    return summary_df
 
 def analyzePbP(pbpDf, year, month, day):
     # rename first column
