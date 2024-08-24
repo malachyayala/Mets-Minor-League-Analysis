@@ -77,6 +77,18 @@ pbpOuts = [
     'fielders_choice_out',
     'triple_play'
 ] # 'strikeout', 'strikeout_double_play'
+
+pbpOutsSO = [
+    'field_out',
+    'double_play',
+    'force_out',
+    'grounded_into_double_play',
+    'fielders_choice',
+    'fielders_choice_out',
+    'triple_play',
+    'strikeout', 
+    'strikeout_double_play'
+]
 def teamIdSearch(teamName):
     teamName = input("Enter team name: ")
     teamId = 0
@@ -154,3 +166,4 @@ completeMetsAAAStats['RC'] = ((completeMetsAAAStats['Hits'] + completeMetsAAASta
 
 # codify column: df['Team'].astype('category').cat.codes
 #completeMetsAAAStats.plot(kind='bar', x='Player', y='HR', title='Home Runs by Player', legend=False)
+# vientosPbp = vientosPbp[vientosPbp['player_name'].str.contains('Baty', case=False, na=False)]
