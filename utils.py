@@ -59,6 +59,7 @@ completeMetsAAAStats = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csv
 defaultInfo = ['Player', 'Age', 'G', 'PA', 'AB']
 basicStats = ['R', 'Hits', '1B', '2B', '3B', 'HR', 'RBI', 'SO', 'BB', 'BA', 'OBP', 'SLG', 'OPS', 'TB', 'GDP', 'HBP']
 advancedStats = ['K%', 'BB%', 'Whiffs', 'Swings', 'xBA', 'xOBP', 'xSLG', 'wOBA', 'xwOBA', 'Barrels', 'BABIP', 'ISO', 'Whiff%', 'EV (MPH)', 'Adj. EV (MPH)' , 'LA (°)' , 'Dist (ft)', 'Hard Hit%', 'Barrel/BBE%', 'Barrel/PA%']
+# LA (°)
 slashLine = ['BA', 'OBP', 'SLG', 'OPS']
 actualVsEx = ['BA', 'xBA', 'OBP', 'xOBP', 'SLG', 'xSLG', 'wOBA', 'xwOBA']
 contactQuality = ['BIP', 'BABIP', 'Barrels', 'Hard Hit%', 'EV (MPH)', 'Adj. EV (MPH)', 'LA (ï¿½)', 'Dist (ft)', 'Barrel/BBE%', 'Barrel/PA%']
