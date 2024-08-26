@@ -76,7 +76,7 @@ pbpOuts = [
     'fielders_choice',
     'fielders_choice_out',
     'triple_play'
-] # 'strikeout', 'strikeout_double_play'
+]
 
 pbpOutsSO = [
     'field_out',
