@@ -47,12 +47,11 @@ minors_teams_dict = {
 }
 
 # Load in CSV files
-leaguewideAAAStatsDf = pd.read_csv('csvs/hitting/BSleaguewideAAAStats.csv', encoding='latin1')
-metsAAAbballSavant = pd.read_csv('csvs/hitting/BSmetsAAAHittersStats.csv', encoding='latin1')
-metsAAAbballRef = pd.read_csv('csvs/hitting/BBrefmetsAAAHitters.csv', encoding='latin1')
+leaguewideAAAStatsDf = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSleaguewideAAAStats.csv', encoding='latin1')
+metsAAAbballSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsAAAHittersStats.csv', encoding='latin1')
+metsAAAbballRef = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BBrefmetsAAAHitters.csv', encoding='latin1')
 metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsPitchByPitchHitters.csv', encoding='latin1')
 completeMilbTrackerPitchers = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/pitching/milbTrackerCompletePitcherStats.csv', header=1)
-metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsPitchByPitchHitters.csv', encoding='latin1')
 completeMetsAAAStats = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/CcompleteAAAMetsStats.csv', encoding='latin1')
 
 # Baseball Savant and Baseball Reference total stat Filters
@@ -105,7 +104,7 @@ def affiliateSearch(teamId):
     print(matching_keys)
     return(matching_keys)
 
-def joinSavantBbref(savant, bballRef):
+def joinSavantBbref(savant, bballRef, columnsToRemove, fileName):
     '''
     Used to join a table scraped from Baseball Savant and Baseball Refence, both sorted in alphabetical order to players can be joined accordingly
     '''
@@ -115,10 +114,11 @@ def joinSavantBbref(savant, bballRef):
     completeStats = savant.join(bballRef, lsuffix='', rsuffix="_right")
 
     columns_to_drop = [col for col in completeStats.columns if col.endswith('_right')]
-    columns_to_drop.extend(['Rk', 'Rk.', 'Notes', 'Pitch %', 'Pitches', 'Total', 'Name', 'H'])
+    columns_to_drop.extend(columnsToRemove)
     completeStats = completeStats.drop(columns=columns_to_drop)
+    completeStats.drop(completeStats.columns[24], axis=1, inplace=True)
 
-    completeStats.to_csv('csvs/CcompleteAAAMetsStats.csv', index = False, encoding='latin1')
+    completeStats.to_csv(f'/Users/mj/Documents/Python/pyminorleague/csvs/pitching/{fileName}.csv', index = False, encoding='latin1')
     return completeStats
 
 def calculateSavantStats(savantDf):

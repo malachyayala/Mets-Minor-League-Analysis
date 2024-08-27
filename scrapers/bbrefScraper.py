@@ -30,7 +30,7 @@ def bballRefScraper(url, tableName, csv = False):
     element = soup.find('table', id=tableName)
     df = pd.read_html(str(element))[0]
     if csv: 
-        df.to_csv(fileName, index=False, encoding='latin1')
+        df.to_csv(fileName, index=False, encoding='utf8')
     return df
 
 if __name__ == "__main__":
