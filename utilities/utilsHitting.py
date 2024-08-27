@@ -46,12 +46,11 @@ minors_teams_dict = {
     "[WSH - AAA] Rochester Red Wings": 534
 }
 
-# Load in CSV files
+# Load in hitting CSVs
 leaguewideAAAStatsDf = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSleaguewideAAAStats.csv', encoding='latin1')
 metsAAAbballSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsAAAHittersStats.csv', encoding='latin1')
 metsAAAbballRef = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BBrefmetsAAAHitters.csv', encoding='latin1')
 metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsPitchByPitchHitters.csv', encoding='latin1')
-completeMilbTrackerPitchers = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/pitching/milbTrackerCompletePitcherStats.csv', header=1)
 completeMetsAAAStats = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/CcompleteAAAMetsStats.csv', encoding='latin1')
 
 # Baseball Savant and Baseball Reference total stat Filters
