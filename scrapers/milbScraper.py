@@ -36,7 +36,7 @@ def scrapeMilbTracker(url, pageCount, csv = False):
         soup = BeautifulSoup(response.text, 'html.parser')
 
         # Use pandas to read the table directly from the HTML
-        tables = pd.read_html(str(soup), header=0)
+        tables = pd.read_html(str(soup), header=1)
     
         # Assuming the table you need is the first one on the page
         df = tables[0]

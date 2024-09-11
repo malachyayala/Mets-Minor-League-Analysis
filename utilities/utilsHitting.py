@@ -47,11 +47,11 @@ minors_teams_dict = {
 }
 
 # Load in hitting CSVs
-leaguewideAAAStatsDf = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSleaguewideAAAStats.csv', encoding='latin1')
-metsAAAbballSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsAAAHittersStats.csv', encoding='latin1')
-metsAAAbballRef = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BBrefmetsAAAHitters.csv', encoding='latin1')
-metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsPitchByPitchHitters.csv', encoding='latin1')
-completeMetsAAAStats = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/CcompleteAAAMetsStats.csv', encoding='latin1')
+leaguewideAAAStatsDf = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSleaguewideAAAStats.csv', encoding='latin-1')
+metsAAAbballSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsAAAHittersStats.csv', encoding='latin-1')
+metsAAAbballRef = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BBrefmetsAAAHitters.csv', encoding='latin-1')
+metsAAApbpSavant = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/BSmetsPitchByPitchHitters.csv', encoding='latin-1')
+completeMetsAAAStats = pd.read_csv('/Users/mj/Documents/Python/pyminorleague/csvs/hitting/CcompleteAAAMetsStats.csv', encoding='latin-1')
 
 # Baseball Savant and Baseball Reference total stat Filters
 defaultInfo = ['Player', 'Age', 'G', 'PA', 'AB']
